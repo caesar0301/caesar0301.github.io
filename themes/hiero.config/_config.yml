@@ -6,6 +6,7 @@
 menu:
   Home: /
   Archives: archives
+  Projects: https://github.com/caesar0301
   # Categories: categories
   # Tags: tags
   About: about
@@ -73,7 +74,7 @@ disqus_shortname: xiamingdotme
 # Available value:
 #    default | normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: default
+highlight_theme: night bright
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
