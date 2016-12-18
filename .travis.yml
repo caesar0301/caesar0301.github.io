@@ -3,7 +3,7 @@ node_js:
 - '6'
 branches:
   only:
-  - master
+  - site-source
 before_install:
 - npm install
 before_script:
