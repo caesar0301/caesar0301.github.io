@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - '0.10'
+branches:
+  only:
+  - master
+before_install:
+  - openssl aes-256-cbc -K $encrypted_5924e2f1869b_key -iv $encrypted_5924e2f1869b_iv -in .travis/ssh_key.enc -out ~/.ssh/id_rsa -d
+  - npm install -g hexo
+  - npm install
+  - chmod 600 ~/.ssh/id_rsa
+  - eval $(ssh-agent)
+  - ssh-add ~/.ssh/id_rsa
+  - cp .travis/ssh_config ~/.ssh/config
+  - git config --global user.name 'Xiamingc'
+  - git config --global user.email 'chen@xiaming.me'
+install:
+before_script:
+  - cp themes/hiero.config/_config.yml themes/hiero/
+script:
+  - hexo clean
+  - hexo g
+  - hexo d
