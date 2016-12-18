@@ -21,11 +21,11 @@ favicon: images/favicon.ico
 
 
 # AboutPage background
-about_big_image: images/cg-taiwan-2015.jpg
+about_big_image: images/cg-taiwan-2015-enc.jpg
 
 
 # Homepage thumbnail
-random_thumb: false
+random_thumb: true
 
 
 # Content
@@ -50,6 +50,11 @@ social:
   Github: https://github.com/caesar0301
   Weibo: http://www.weibo.com/fuckinmylife
   Twitter: http://www.twitter.com/xiamingc
+  # Facebook:
+  # Google-plus:
+  # Instagram:
+  # Pinterest:
+  # Flickr:
 
 
 # Search

@@ -57,7 +57,7 @@ time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 6
+per_page: 8
 pagination_dir: page
 
 # Extensions
@@ -70,10 +70,10 @@ theme: hiero
 deploy:
   type: git
   repo: git@github.com:caesar0301/caesar0301.github.io.git
-  branch: gh-pages
+  branch: master
   message: "Update site"
 
 # redirect old links
 # hexo-generator-alias
 alias:
-  pages/about/: about/
+  pages/about.html: about/

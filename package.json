@@ -7,8 +7,8 @@
   },
   "scripts": {
     "start": "hexo server --drafts",
-    "generate": "hexo generate",
-    "deploy": "hexo deploy --silent"
+    "generate": "cp themes/hiero.config/_config.yml themes/hiero/ && hexo generate",
+    "deploy": "hexo deploy"
   },
   "dependencies": {
     "hexo": "^3.2.0",
