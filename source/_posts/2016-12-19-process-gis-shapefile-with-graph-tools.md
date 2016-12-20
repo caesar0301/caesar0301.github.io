@@ -30,4 +30,4 @@ INFO:root:Cutting lines with specific resolution = 0.01 km
 INFO:root:Graph created with 1770 nodes, 1528 edges
 ```
 
-[image](https://antoxq.bl3302.livefilestore.com/y3mO9cHpjxxAQnvlnfoGs0G6e7hYrdVg4RXCZC8rsqvl2gf7_wCf3xvb_P5v063EWRz5MyfsJgUEs8E32JggQ0WBD3eeYCicBkLFAJS8szheXpDC1lNqVKzIepOl7aJHbIcPsNWn5-gUx5PhJ7nfg9twIlySYIFpEa9iP6ygo8rSy4?width=587&height=426&cropmode=none)
+![image](https://antoxq.bl3302.livefilestore.com/y3mO9cHpjxxAQnvlnfoGs0G6e7hYrdVg4RXCZC8rsqvl2gf7_wCf3xvb_P5v063EWRz5MyfsJgUEs8E32JggQ0WBD3eeYCicBkLFAJS8szheXpDC1lNqVKzIepOl7aJHbIcPsNWn5-gUx5PhJ7nfg9twIlySYIFpEa9iP6ygo8rSy4?width=587&height=426&cropmode=none)
