@@ -3,7 +3,7 @@ title: about
 date: 2016-05-27 17:29:14
 ---
 
-![Xiaming Chen](/images/default_avatar.jpg)
+![Xiaming Chen](/images/default_avatar_m3.jpg)
 © Rourou
 
 Ph.D, a new title for me since 09/2016, after a six-year long run to this goal. This is not a stop, yet another new start for me. My thesis advisor was Prof. [Yaohui Jin](http://front.sjtu.edu.cn/~jinyh/) at [Shanghai Jiao Tong Univ.](http://en.sjtu.edu.cn/). Now [the thesis](https://github.com/caesar0301/phd-dissertation) is open for public (just in Chinese version, officially). Before that, I received my B.S. of Optical Information and Science Technology at Xidian University since 2010.
