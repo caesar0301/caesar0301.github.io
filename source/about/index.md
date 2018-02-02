@@ -3,10 +3,9 @@ title: about
 date: 2016-05-27 17:29:14
 ---
 
-![Xiaming Chen](/images/default_avatar_m4.jpg)
-© Rourou
+![Xiaming Chen](/images/default_avatar_m4.png)
 
-Ph.D, a new title for me since 09/2016, after a six-year long run to this goal. This is not a stop, yet another new start for me. My thesis advisor was Prof. [Yaohui Jin](http://front.sjtu.edu.cn/~jinyh/) at [Shanghai Jiao Tong Univ.](http://en.sjtu.edu.cn/). Now [the thesis](https://github.com/caesar0301/phd-dissertation) is open for public (just in Chinese version, officially). Before that, I received my B.S. of Optical Information and Science Technology at Xidian University since 2010.
+Ph.D, a new achievement for me upto 09/2016, after a six-year long run to this goal. This is not a stop, yet another new start for me. My thesis advisor was Prof. [Yaohui Jin](http://front.sjtu.edu.cn/~jinyh/) at [Shanghai Jiao Tong Univ.](http://en.sjtu.edu.cn/). Now [the thesis](https://github.com/caesar0301/phd-dissertation) is open for public (just in Chinese version, officially). Before that, I received my B.S. of Optical Information and Science Technology at Xidian University since 2010.
 
 Shortly put, my Ph.D research was on renewed models and characteristics of human mobility, with advanced statistical techniques and large-scale network traffic. There is a large gap between observable behavioral patterns and digital bits, as collected from raw network data, such as mobile geo-locations, application traffic etc.. Advanced analysis and modeling approaches are still in a shortage. This shortage inspires my initial efforts on the work. Since then, I become a data enthusiast.
 
