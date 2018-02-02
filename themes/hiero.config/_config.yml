@@ -22,6 +22,14 @@ keywords:
 # Put your favicon.ico into `hexo-site/themes/hiero/source/` directory.
 favicon: images/favicon.ico
 
+# Put your avatar.jpg into `hexo-site/themes/hiero/source/` directory.
+# url is target link (E.g. `url: https://hexo.io/logo.svg` or `url: css/images/mylogo.jpg`)
+avatar: 
+  enable: false
+  width: 124
+  height: 124
+  bottom: 10
+  url: https://hexo.io/logo.svg
 
 # AboutPage background
 about_big_image: images/cg-taiwan-2015-enc.jpg
@@ -29,6 +37,11 @@ about_big_image: images/cg-taiwan-2015-enc.jpg
 
 # Homepage thumbnail
 random_thumb: false
+
+
+# Post Article's Content
+post_catalog:
+  enable: true
 
 
 # Content
@@ -46,6 +59,7 @@ widgets:
   - tagcloud
   - archive
 
+
 # Social Links
 # Key is the name of FontAwsome icon.
 # Value is the target link (E.g. GitHub: https://github.com/iTimeTraveler)
@@ -53,11 +67,12 @@ social:
   Github: https://github.com/caesar0301
   Weibo: http://www.weibo.com/fuckinmylife
   Twitter: http://www.twitter.com/xiamingc
-  # Facebook:
+  Facebook:
   # Google-plus:
   # Instagram:
   # Pinterest:
   # Flickr:
+  email: chenxm35@gmail.com
 
 
 # Search
@@ -68,8 +83,17 @@ search:
 
 
 # comment ShortName, you can choose only ONE to display.
-# duoshuo_shortname: xiamingdotme
-disqus_shortname: xiamingdotme
+# gentie_productKey: #your-gentie-product-key
+duoshuo_shortname: xiamingdotme
+# disqus_shortname: 
+# livere_shortname: MTAyMC8yOTQ4MS82MDQ5
+# uyan_uid: 
+# wumii:
+# gitment:
+#   owner:                   #Your GitHub ID
+#   repo:                    #The repo to store comments
+#   client_id:               #Your client ID
+#   client_secret:           #Your client secret
 
 
 # Code Highlight theme
@@ -116,3 +140,19 @@ facebook_sdk:
 
 # CNZZ count
 cnzz_siteid:
+
+# donation button
+donate:
+    enable: true
+    message: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!'
+    wechatImage: https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png
+    alipayImage: https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg
+
+# Automatic page load progress bar by PACE.js
+progressBar:
+  enable: true #switch
+  themeCSS: https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css    #PATH to PACE theme CSS, support relative / absolute path
+
+# Ad
+ad:
+  google_adsense_ad_client_id: ca-pub-0123456789ABCDEF
