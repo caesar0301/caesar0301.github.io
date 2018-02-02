@@ -71,7 +71,7 @@ deploy:
   type: git
   repo: git@github.com:caesar0301/caesar0301.github.io.git
   branch: master
-  message: "Update site"
+  message: "Update ${COMMIT_SHA}"
 
 # redirect old links
 # hexo-generator-alias

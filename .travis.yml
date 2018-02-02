@@ -1,22 +1,20 @@
 language: node_js
 node_js:
-- '6'
+  - '6'
 branches:
   only:
   - site-source
 before_install:
-- npm install
+  - npm install
 before_script:
-- cp themes/hiero.config/_config.yml themes/hiero/
-- git config --global user.name 'xiaming.chen'
-- git config --global user.email 'chenxm35@gmail.com'
-- sed -i'' "s~git@github.com:caesar0301/caesar0301.github.io.git~https://${GH_TOKEN}:x-oauth-basic@github.com/caesar0301/caesar0301.github.io.git~"
-  _config.yml
+  - export COMMIT_SHA=`git rev-parse --verify HEAD`
+  - cp themes/hiero.config/_config.yml themes/hiero/
+  - git config --global user.name 'xiaming.chen'
+  - git config --global user.email 'chenxm35@gmail.com'
 install:
-- npm run generate
+  - npm run generate
 script:
-- npm run deploy
+  - bash deploy/deploy.sh
 env:
   global:
-  - secure: 1Jv5Y65IWY2fY38dhIuLpEVjOkSJ1xQ50zO4IoMx6RgEWq+2pltEavZ3Ah1955QHAsXlwsRyFh0TesAjQvbwq3eAwwh0bN9kvtowUwOWcFpbcmkD8UUBJ7OgtFkd9kSoKi92aqnWyyIIW7bb1ZNVIXdhvAuZm4CUGIwOjhgebpyf1chKFond/a6pejjQXumWCXRLNyECV4zoEYgR+btsNMUT5gFpA0xFb1ZVTDH+4D78QrMpt7ki+ARnh2bzCoNMQjiSc/5rGKpsOQyb0m8gyEwg73qJ70y72Fxxt8EXh2l2hqvhtTcSYS9FypjxSsqwbfgkcV4skS1pq8hOj4ADXXU4YEMYAA8swfr+GEBinEwVIBeKvfQrgSofPRMlcS4wFyyLfZZU2KK1LAPKjBAdw5Y675RqC+ce0KwGamxxSMjUNl5dDhPHIXgIc8ZJ1YwjCV1KvFzhKvGxgVcVRtkg5lIt3e8ksZuq1VNqjuWzmPdTj7Z5NIcRCZpBWozSJdXtGvXh4QxI2ENUQlKaW0DOIzMP7HCBKWaSA+YwerB+mbm+KFSQvbdLcu9QZISJhwBoqi5Dvw73PGahVQXgZYjXKeoUF6JBPuD6CqHDAJIbqlkLVzCytWoyuHU0Ug8YxwTs+jhIhy20VhzWyN0UV+quTJwxGokHu4pbsPKxgLJ9aUs=
-  - secure: CbMmodaeXCrPci04jzfn/6GdoR/Y7dTuvjshmx+g8mCPYSEWmbERzVE0D52CVtp4CXeKQclfTfjiT+/EcCZUmApZhSu296iB5akYyTU3wz+5QvNHjJexTg4hxuSHj/1gQ8AQLnkg3hIMBOsz8Bi7PWUwrLOVkeqSD0P2DyukhTqe4eYEuvSFZbRvZyusSeCXaCFBft2P0FPb8DtcRIrp5nD2D2hsp96utiA7JDHPqR4uGO8+KbVSLQ3qinXaklrDwRnwvKJJNuz9Ts3LWY+hOqEgnx8EXdeXSuXu1/jaO4mQzXtSwmBFa3WJahaM/wyehSB6TUeKOyeI7y2oBGrrz0lOzwC7Yh3j/3IZ/XhsplryQVZ9NgI1gHpMw35pmyXs9mvrh14dSG2aZkw9T7EW1wU21/z+KOnXqbbXZZgMxMvQi4p0KiD7bqHIxh6pfd1HKk+ozLN+LbcJk9veE9N0SezOUzPVae78W8EAPTEEjN6jkah1BCWSqX8xbmbJWKaEzOD393mujCIfO38XJ1n61mWo38fM6rwEN+L5BGpKtzOnkzOCOQS4DLq2J4gauKm6e1A9SHuspCm2smVVkHp6K6fCVA0aD15vdt8g2LLNmmz0y6reove4I73wWH9+0bafe9H8mgg0ojRGCGNF4+7Vt9HB5Lhslb3TXdns7Adjxg8=
+  - ENCRYPTION_LABEL: ec11043d1833
