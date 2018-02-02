@@ -1,0 +1,3 @@
+[submodule "themes/hiero"]
+	path = themes/hiero
+	url = https://github.com/iTimeTraveler/hexo-theme-hiero.git
