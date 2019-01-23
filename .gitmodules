@@ -4,3 +4,4 @@
 [submodule "source"]
 	path = source
 	url = https://github.com/caesar0301/personal-site.git
+	branch = master
