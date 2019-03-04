@@ -4,8 +4,6 @@ date: 2014-10-23 12:00:00
 tags:
     - GIS
     - OpenData
-photos:
-    - http://7xlgp4.com1.z0.glb.clouddn.com/blog-post08-nyc-taxi-one-day.png
 ---
 
 
@@ -27,8 +25,6 @@ Despite the previous concerns, there have occurred some interesting data that re
 
 ### Bike Share Systems (BSS)
 
-[![Bicycle sharing system](http://7xlgp4.com1.z0.glb.clouddn.com/blog-post08-hangzhou_bike_sharing_station.jpg)](http://en.wikipedia.org/wiki/Bicycle_sharing_system)
-
 Recent years, many large cities over the world have their [bicycle sharing system](http://en.wikipedia.org/wiki/Bicycle_sharing_system) to lower the pressure of transportation systems and reduce the discharge of green house gas. A happy news is that most of these BSS runners have opened their data to stimulate new applications and optimize the management of their resources. Known applications contains the clustering of customer usage patterns and the prediction of available bikes in each stock. By connecting available resources in physical world and personal preferences, future applications can be the development of intelligent tour guides, and some social activities on the bike-riding networks.
 
 [Nice Ride](https://www.niceridemn.org/) is a company in Minnesota, US, running a bike sharing networks in the urban area. This company is one of the pioneers to make the data available. The first public version of 2011 gives the initial station network and trip histories with subscriber info (ID, date of birth, gender, ZIP code). Each individual trip with start and stop info is recorded. The [following years](https://github.com/MinnPost/minnpost-nice- ride) removed the subscriber data to protect privacy at the request of [Anton Schieffer](http://antonschieffer.com/2012/12/nice-ride-and-user-privacy-crossing-the-line/). A nice visualization of these data is given by Alan Palazzolo et al. on MinnPost, [A day in the life of Nice Ride bikes](http://www.minnpost.com/data/2012/06/day-life-nice-ride-bikes).
@@ -44,14 +40,10 @@ The other two companies come from Washington DC, US ([CapitalBikeshare](http://w
 
 311 is New York City's main source of government information and non-emergency services. The first use of 3-1-1 for informational services was in Baltimore, Maryland, where the service commenced on 2 October 1996. 3-1-1 is intended to connect callers to a call center that can be the same as the 9-1-1 call center, but with 3-1-1 calls assigned a secondary priority, answered only when no 9-1-1 calls are waiting. This system is intended to extend the system such that true emergency callers are answered quickly with highest priority. [311 service requests since 2010](https://nycopendata.socrata.com/d/erm2-nwe9) are availabe at [NYC OpenData site](https://nycopendata.socrata.com/). You can associate this repository with other datasets like transportation services.
 
-[![NYC311](http://7xlgp4.com1.z0.glb.clouddn.com/blog-post08-nyc311.jpg)](https://nycopendata.socrata.com/d/erm2-nwe9)
-
 
 ### New York Taxi Cab trip
 
 This dataset contains the taxi trip in NY, 2013 and is first FOILed ((The Freedom of Information Law) by civic hacker and downtown Brooklyn resident Chris Whong. He discovered the [Taxi! video](http://vimeo.com/31298658) and ask the author if the data would be available. Surprisingly, the response states that [this data was FOILable](http://chriswhong.com/open-data/foil_nyc_taxi/). After publication of data, he also work out a stunning visualization of [NYC Taxis: A Day in the Life](http://nyctaxi.herokuapp.com/) (The back-end techniques are also described in his blogs, [part 1](http://chriswhong.com/data-visualization/taxitechblog1/) and [part 2](http://chriswhong.com/open-data/taxi-techblog-2-leaflet-d3-and-other-frontend-fun/)).
-
-[![herokuapp](http://7xlgp4.com1.z0.glb.clouddn.com/blog-post08-nyc-taxi-one-day.png)](http://nyctaxi.herokuapp.com/)
 
 - [Torrent for 2013 Trip Data (11.0GB)](http://chriswhong.com/wp-content/uploads/2014/06/nycTaxiTripData2013.torrent)
 - [Torrent for 2013 Fare Data (7.7GB)](http://chriswhong.com/wp-content/uploads/2014/06/nycTaxiFareData2013.torrent)

@@ -6,9 +6,6 @@ tags:
     - Mobility
 ---
 
-
-![must-have-banner](http://7xlgp4.com1.z0.glb.clouddn.com/must_have.png)
-
 In my Ph.D career, human behavior (especially mobility) analysis from telecommunication data is my studying theme.  I learned a bunch of theories and techniques from other domains when they are of convenience to analyze human mobility.  As for the intrinsic complexity of human behavior and intersection of behavior science, tools you should have in package are usually not a hammer but a flexible toolkit.  Different problems prefer specific classes of methods to solve. When you change views of the same problem with other theories, novel inspections may appear.  Here I introduce a mostly-related book list that is beneficial when you are either a green hand or an expert in the domain.
 
 <!-- more -->

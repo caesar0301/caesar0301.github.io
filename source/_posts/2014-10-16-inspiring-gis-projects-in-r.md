@@ -5,8 +5,6 @@ comments: true
 tags:
     - GIS
     - R
-photos:
-    - http://7xlgp4.com1.z0.glb.clouddn.com/blog-post07-topography.png
 ---
 
 
@@ -46,25 +44,17 @@ I have make up serveral creteria to filter out other projects in face of what I 
 
 This is a [tutorial](http://pakillo.github.io/R-GIS-tutorial/) contributed by [Francisco Rodriguez-Sanchez](http://sites.google.com/site/rodriguezsanchezf) to perform basic operations with spatial data in R, such as importing and exporting data (both vectorial and raster), plotting, analyzing and making maps. Also [github site](https://github.com/Pakillo/R-GIS-tutorial). Here is an example to plot Europe countries using the package **rworldmap**:
 
-![worldmap](http://7xlgp4.com1.z0.glb.clouddn.com/blog-post07-rworldmap.png)
-
 
 ### Mapping the world’s biggest airlines
 
 This colored map [visualizes the top 7 airlines in the world](http://spatialanalysis.co.uk/2012/06/mapping-worlds-biggest-airlines/). It is totally generated with open data and R (i.e., a graphical package [ggplot2](http://ggplot2.org/). The author combines the urban area of [dense human habitation](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-urban-area/) and the airline [route data](http://sourceforge.net/p/openflights/code/HEAD/tree/openflights/data/routes.dat?format=raw) from [OpenFlights](http://openflights.org/data.html). The beautiful style inherits the spirit of "[Earth at Night](http://apod.nasa.gov/apod/ap001127.html)" which is a composite of hundreds of pictures made by the orbiting DMSP satellites.
-
-![airlines](http://7xlgp4.com1.z0.glb.clouddn.com/blog-post07-airlines.jpg)
 
 
 ### Visualising topography
 
 [Robin Edwards](http://geotheory.co.uk/), a researcher at UCL CASA, has created these [stunning topographic](http://geotheory.co.uk/blog/2014/02/07/visualising-topography/) maps using the high resolution elevation data provided by the British Oceanographic Data Centre. The transitions from black (high areas) to blue (low areas) give the maps a slightly ethereal appearance to dramatic effect.
 
-![topography](http://7xlgp4.com1.z0.glb.clouddn.com/blog-post07-topography.png)
-
 
 ### Facebook friends network
 
 You have possibly seen this figure in other media to illustrate the impacts of social networks on our lives. This figure is created by [Paul Butler](http://paulbutler.org/) when he was an intern in Facebook, 2010. The details are given [here](http://on.fb.me/1CucrEA) and [here, too](http://paulbutler.org/archives/visualizing-facebook-friends/). The main challenge is to adjust the plotting order and colors of lines regarding the line weight (number of friends).
-
-![facebook-worldmap](http://7xlgp4.com1.z0.glb.clouddn.com/blog-post07-facebook-network.jpg)

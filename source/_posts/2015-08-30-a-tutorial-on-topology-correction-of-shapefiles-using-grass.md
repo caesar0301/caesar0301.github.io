@@ -75,8 +75,6 @@ The topology correction removes the number of self-connected parts mostly by bre
 
 As show in figure below, the left is the original shapefile with 256 self- connected parts, and the middle figure gives the result after our correction with previous configurations. Actually, the resolution of topology is largely impacted by the selection of toolkit parameters. For example, we exhibit the snapping tool with threshold `0.0005` (right figure) which gives a rough sketch of underlying network. As for the personal requirements, you should experiment with multiple sets of parameters to get the satisfied result.
 
-![performance](http://7xlgp4.com1.z0.glb.clouddn.com/blog-post15-correction-comparison.png)
-
 
 ## Appendix:
 
