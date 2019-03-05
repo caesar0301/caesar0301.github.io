@@ -8,7 +8,7 @@ before_install:
   - npm install
 before_script:
   - export COMMIT_SHA=`git rev-parse --verify HEAD`
-  - cp themes/hiero.config/_config.yml themes/hiero/
+  - cp themes/hiero_config.yml themes/hiero/_config.yml
   - git config --global user.name 'xiaming.chen'
   - git config --global user.email 'chenxm35@gmail.com'
 install:
