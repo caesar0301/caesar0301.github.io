@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "hexo server --drafts",
-    "generate": "cp themes/hiero.config/_config.yml themes/hiero/ && hexo generate",
+    "generate": "cp themes/hiero_config.yml themes/hiero/_config.yml && hexo generate",
     "deploy": "hexo deploy"
   },
   "dependencies": {
