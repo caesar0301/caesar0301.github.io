@@ -24,23 +24,25 @@ Deepdive是斯坦福前几年开发的知识特征提取引擎，不过项目目
 ```bash
 git clone --recurse-submodules https://github.com/HazyResearch/deepdive.git
 ```
+由于环境兼容性问题，需要做一些修改：
 
 手动修改[install.Ubuntu.sh](https://github.com/HazyResearch/deepdive/blob/master/util/install/install.Ubuntu.sh)的Python依赖，去掉由于版本关系不支持的`python-software-properties`（删除所有出现）。
 
-```bash
-export NO_DOCKER_BUILD=true
-export NO_MINDBENDER=true  #后面说明原因
-make depends  # 安装运行时依赖，包含g++-4.8
-```
-
 由于编译Deepdive时一些组件需要依赖g++-4.8，这里利用update-alternative进行g++版本管理：
 ```bash
+sudo apt install g++-4.8
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 20  # 系统默认版本
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 20
 sudo update-alternatives --config g++  # 选择g++-4.8对应数字，临时切换到该版本
 ```
 
-如果由于g++版本导致前一次依赖安装失败，此时可以再次运行`make depends`。
+安装运行时依赖
+
+```bash
+export NO_DOCKER_BUILD=true
+export NO_MINDBENDER=true  #后面说明原因
+make depends
+```
 
 **编译安装Deepdive**
 
