@@ -8,8 +8,7 @@ menu:
   Archives: archives
   Projects: https://github.com/caesar0301
   Publications: https://scholar.google.com/citations?user=9GzdwPEAAAAJ
-  APD: https://github.com/awesomedata
-  # Categories: categories
+  Categories: categories
   # Tags: tags
   About: about
 rss: /atom.xml
