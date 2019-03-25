@@ -2,6 +2,7 @@
 title: Useful IDEA Shortcuts on Mac OS X
 date: 2015-08-20
 comments: true
+categories: Cheatsheet
 tags:
     - Tools
 ---

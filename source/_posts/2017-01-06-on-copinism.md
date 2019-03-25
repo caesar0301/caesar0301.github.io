@@ -2,8 +2,7 @@
 title: 新“拿来主义”
 date: 2017-01-06
 comments: true
-categories:
-  - Review
+categories: 我思故我在
 tags:
   - Management
 ---

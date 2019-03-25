@@ -2,6 +2,7 @@
 title: R packages you should put under your pillow
 date: 2015-05-20
 comments: true
+categories: Tutorials
 tags:
     - R
 ---

@@ -2,6 +2,7 @@
 title: Inspiring GIS projects in R
 date: 2014-10-16 17:06:00
 comments: true
+categories: Tutorials
 tags:
     - GIS
     - R

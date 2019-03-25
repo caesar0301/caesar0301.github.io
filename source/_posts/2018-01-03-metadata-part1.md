@@ -2,8 +2,7 @@
 title: 元数据的可计算化反（上）
 date: 2018-01-03
 comments: true
-categories:
-  - KnowledgeComputing
+categories: 我思故我在
 tags:
   - Metadata
 ---

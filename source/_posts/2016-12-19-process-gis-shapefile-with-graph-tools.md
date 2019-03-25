@@ -2,6 +2,7 @@
 title: Process GIS shapefile with graph tools
 date: 2016-12-19
 comments: true
+categories: Tutorials
 tags:
     - GIS
     - Python

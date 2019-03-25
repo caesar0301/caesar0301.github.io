@@ -2,6 +2,7 @@
 title: A tutorial on topology correction of shapefiles using GRASS
 date: 2015-08-30
 comments: true
+categories: Tutorials
 tags:
     - GIS
     - Tools

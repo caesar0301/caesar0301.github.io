@@ -1,6 +1,7 @@
 ---
 title: Leveraging open data to understand urban lives
 date: 2014-10-23 12:00:00
+categories: 我思故我在
 tags:
     - GIS
     - OpenData

@@ -2,6 +2,7 @@
 title: 14 Must-Read Books for Behavior Data Scientists
 date: 2015-10-15
 comments: true
+categories: 读书笔记
 tags:
     - Mobility
 ---

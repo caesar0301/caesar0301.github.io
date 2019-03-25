@@ -2,9 +2,9 @@
 title: Understanding metadata
 date: 2017-03-20
 comments: true
-categories:
-  - KnowledgeComputing
+categories: 读书笔记
 tags:
+  - KnowledgeComputing
   - Metadata
 ---
 

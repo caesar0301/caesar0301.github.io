@@ -2,6 +2,7 @@
 title: 'Enable LZO compression on Hadoop, Pig and Spark'
 date: 2014-05-03 19:20:00
 comments: true
+categories: Tutorials
 tags:
 	- Hadoop
 	- Pig

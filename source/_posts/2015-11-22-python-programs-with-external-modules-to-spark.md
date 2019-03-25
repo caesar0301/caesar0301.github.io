@@ -2,6 +2,7 @@
 title: Python Programs with External Modules to Spark
 date: 2015-11-22
 comments: true
+categories: Tutorials
 tags:
     - Spark
     - Python

@@ -2,10 +2,9 @@
 title: 知识计算引擎可能的实现方式
 date: 2018-03-15
 comments: true
-categories:
-  - KnowledgeComputing
-  - ReadingNotes
+categories: 读书笔记
 tags:
+  - KnowledgeComputing
   - RDF
   - RDFS
   - OWL

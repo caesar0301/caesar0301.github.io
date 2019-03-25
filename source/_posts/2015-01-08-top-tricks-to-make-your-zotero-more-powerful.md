@@ -2,6 +2,7 @@
 title: Top tricks to make your Zotero more powerful
 date: 2015-01-08
 comments: true
+categories: Tutorials
 tags:
     - Tools
 ---
