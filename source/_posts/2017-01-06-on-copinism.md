@@ -2,7 +2,7 @@
 title: 新“拿来主义”
 date: 2017-01-06
 comments: true
-categies:
+categories:
   - Review
 tags:
   - Management

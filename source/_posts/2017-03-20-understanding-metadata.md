@@ -2,8 +2,8 @@
 title: Understanding metadata
 date: 2017-03-20
 comments: true
-categies:
-  - DataScience
+categories:
+  - KnowledgeComputing
 tags:
   - Metadata
 ---

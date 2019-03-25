@@ -2,7 +2,7 @@
 title: 知识计算引擎可能的实现方式
 date: 2018-03-15
 comments: true
-categies:
+categories:
   - KnowledgeComputing
   - ReadingNotes
 tags:

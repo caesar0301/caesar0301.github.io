@@ -2,7 +2,7 @@
 title: Ubuntu 18.04 LTS安装CNDeepdive
 date: 2018-03-04
 comments: true
-categies:
+categories:
   - KnowledgeComputing
 tags:
   - deepdive
