@@ -1,7 +1,7 @@
 ---
-title: 知识计算项目OpenKCG介绍
+title: 知识计算项目介绍
 date: 2020-03-05
-categories: OpenKGC
+categories: KnowledgeComputing
 ---
 
 # 背景和动机
@@ -28,7 +28,7 @@ categories: OpenKGC
 
 # 开放知识计算
 
-我于2020年初发起 [Open Knowledge Computing](https://github.com/OpenKGC)（开放知识计算）项目，众人拾薪来实现这一目标。当然实现上述的愿景和目标并不容易，不仅需要创新先进的技术做基础，而且需要强有力的商业执行力保驾护航。即使这一目标暂时过于遥远，也希望能够激发更多人对“数据智能造福众生”理念的认识，积极参与其中。
+我于2020年初发起 [Libre Knowledge Computing](https://github.com/LibreKC)（开放知识计算）项目，众人拾薪来实现这一目标。当然实现上述的愿景和目标并不容易，不仅需要创新先进的技术做基础，而且需要强有力的商业执行力保驾护航。即使这一目标暂时过于遥远，也希望能够激发更多人对“数据智能造福众生”理念的认识，积极参与其中。
 
 下面我将从技术上对知识计算系统中关键组件的一些思考。
 

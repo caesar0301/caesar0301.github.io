@@ -1,0 +1,45 @@
+# Logo (Font Awesome Class)
+fa_logo: fa-cube
+
+# Header
+menu:
+  Home: /
+  Archives: archives
+  Projects: https://github.com/caesar0301
+  Publications: https://scholar.google.com/citations?user=9GzdwPEAAAAJ
+  Categories: categories
+  Tags: tags
+  About: about
+rss: /atom.xml
+
+# Default post title
+default_post_title: Untitled
+
+# Archive Date Format
+archive_date_format: MMM YYYY
+
+# Comments.
+comments:
+  disqus_shortname: xiamingdotme
+
+# Google Analytics Tracking ID
+google_analytics:
+
+# Social Accounts
+twitter_url: http://www.twitter.com/xiamingc
+#facebook_url: https://www.facebook.com/
+#instagram_url: https://www.instagram.com/
+#dribble_url: https://dribbble.com/
+github_url: https://github.com/caesar0301s
+#telegram_url: https://telegram.org/
+#behance_url: https://www.behance.net/
+#fivehundredpx_url: https://500px.com/
+email_url: chenxm35@gmail.com
+#rss_url: \#
+
+# Footer About Text
+footer_about: "Personal site. Learn more beyond what you can imagine. | 朝闻道，夕可死矣"
+
+# Footer Copyright Line
+footer_copyright: "@Untitled. All right reserved | Dr. Xiaming Chen"
+
