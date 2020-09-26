@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "hexo server --drafts",
-    "generate": "cp themes/alpha-dust_config.yml themes/alpha-dust/_config.yml && hexo generate",
+    "generate": "git clone https://github.com/klugjo/hexo-theme-alpha-dust themes/alpha-dust && cp themes/alpha-dust_config.yml themes/alpha-dust/_config.yml && hexo generate",
     "deploy": "hexo deploy"
   },
   "dependencies": {
