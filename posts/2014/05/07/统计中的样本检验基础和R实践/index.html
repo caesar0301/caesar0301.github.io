@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Xiaming">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="统计中的样本检验基础和R实践">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="InnoTrek">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary">
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>统计中的样本检验基础和R实践 - InnoTrek</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://github.com/caesar0301">
+                    Projects
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://scholar.google.com/citations?user=9GzdwPEAAAAJ">
+                    Publications
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/posts/2014/05/07/统计中的样本检验基础和R实践/">
+                统计中的样本检验基础和R实践
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-05-07</span>
+            
+            
+                <a href="#disqus_thread" class="comments">Comments</a>
+            
+            
+                <span class="category">
+                    <a href="/categories/Tutorials/">Tutorials</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>本文总结了<a href="http://www.amazon.com/R-Action-Robert-Kabacoff/dp/1935182390" target="_blank" rel="noopener">R in Action</a>一书中提到的关于样本检验的内容，以概要的形式提供给读者以及自己参考。</p>
+<p><em>注: H0表示空假设，即样本检测的假设对象。</em></p>
+<a id="more"></a>
+<h2 id="独立性检验（列联表）"><a href="#独立性检验（列联表）" class="headerlink" title="独立性检验（列联表）"></a>独立性检验（列联表）</h2><ul>
+<li><p>卡方检验：*H0:假设二维表的行和列变量相互独立。<code>stats</code>包的<strong>chisq.test()</strong></p>
+</li>
+<li><p>Fisher精确检验: *H0:边界固定的二维列联表行和列独立。<code>stats</code>包的<strong>fisher.test()</strong></p>
+</li>
+<li><p>Cochran-Mantel-Haenszel检验：*H0:两个名义变量在第三个变量的每一层中都是条件独立的。<code>stats</code>包的.test()</p>
+</li>
+</ul>
+<h2 id="相关性检验"><a href="#相关性检验" class="headerlink" title="相关性检验"></a>相关性检验</h2><ul>
+<li><p>常用系数：Pearson, Spearman, Kendall, 偏相关系数, 多分格polychoric,多系列polyserial</p>
+</li>
+<li><p>PSK: 相关系数<strong>cor()</strong>, 协方差<strong>cov()</strong>, <code>psych</code>包的<strong>corr.test()</strong></p>
+</li>
+<li><p>偏相关：控制一个或多个定量变量，检验另外两个变量之间的相关性。<code>ggm</code>包的<strong>pcor()</strong></p>
+</li>
+<li><p>其他类型：<code>polycor</code>包的<strong>hetcor()</strong>有多种其他类型的相关函数</p>
+</li>
+</ul>
+<h2 id="相关显著性检验"><a href="#相关显著性检验" class="headerlink" title="相关显著性检验"></a>相关显著性检验</h2><ul>
+<li><p>PSK: <strong>cor.test(), corr.test()</strong>.后者可同时检测多种相关关系。</p>
+</li>
+<li><p>其他类型：<code>psych</code>包的<strong>pcor.test() &amp; r.test()</strong></p>
+</li>
+</ul>
+<h2 id="分组检测"><a href="#分组检测" class="headerlink" title="分组检测"></a>分组检测</h2><p>1) 参数检验</p>
+<ul>
+<li><p>独立样本t检验：*H0:被检验的两组样本独立且均值相等，并且从正态总体中抽的。<code>stats</code>包的<strong>t.test()</strong></p>
+</li>
+<li><p>非独立样本t检验：两组观测相关，一般通过非独立组设计获得，如pre-post design, repeated measures design。 *H0：假定组间差异呈正态分布，且均值相等。<code>stats</code>包的<strong>t.test(.。, paired=TRUE)</strong></p>
+</li>
+<li><p>多于两组的非独立样本：如果对比组大于2且满足数据是从正态总体中独立抽样获得的假设，可采用ANOVA方差分析。</p>
+</li>
+</ul>
+<p>2) 非参数检验: 通常独立样本也被称作单样本(one-sample)检验，非独立样本被称作双样本(two-sample) 检验。单样本检验的自由度是n1+n2-1，双样本检验自由度是n/2-1.</p>
+<ul>
+<li><p>两组独立样本：可以使用Wilcoxon秩和检验(Mann-Whitney U检验), <strong>wilcox.test()</strong></p>
+</li>
+<li><p>两组非独立样本：可以使用Wilcoxon符号秩检验。它适用于两组成对数据且无法保证正态性假设的情景。<code>stats</code>包的<strong>wilcox.test(.., paired=TRUE)</strong></p>
+</li>
+<li><p>多于两组的样本：如果各组样本独立，则可使用Krushkal-Wallis检验；如果不独立，可使用Friedman检验。*H0:各组的平均值相同。<code>stats</code>包的<strong>kruskal.test() &amp;friedman.test()</strong>。<code>npmc</code>包的<strong>npmc()</strong>函数可实现非参数的多组比较。</p>
+</li>
+</ul>
+<h2 id="样本检验的一般步骤"><a href="#样本检验的一般步骤" class="headerlink" title="样本检验的一般步骤"></a>样本检验的一般步骤</h2><ul>
+<li><p>提出研究问题，总结出需要通过数据分析得出的问题。</p>
+</li>
+<li><p>描述空假设和被选假设。空假设的提出通常需要能够通过数据分析得出“接受”或“拒绝”的结论，如均值相等，均值大于X0等。</p>
+</li>
+<li><p>清楚假设条件。检验过程是在一定的假设条件下进行的，比如通常需要考虑，样本是否独立分布，均值和方差的统计分布等。</p>
+</li>
+<li><p>根据样本数量和假设条件，选择合适的检验方法，如t检验，以及检验统计量T。</p>
+</li>
+<li><p>在空假设和观测样本的基础上，计算检验的统计分布，如学生分布或正态分布。</p>
+</li>
+<li><p>选择合适的统计显著水平p-value，常用的5%和1%。</p>
+</li>
+<li><p>计算检验统计量T的拒绝区间(critical region)，即在该区间内，空假设即被拒绝为真。</p>
+</li>
+<li><p>根据观测样本，计算检验统计量的观测直t_obs。</p>
+</li>
+<li><p>得出结论：如果t_obs落在拒绝区间里，则拒绝空假设；否则，无法拒绝空假设。</p>
+</li>
+</ul>
+<p>相关链接：</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Statistical_hypothesis_testing" target="_blank" rel="noopener">Statistical hypothesis testing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Exploratory_data_analysis" target="_blank" rel="noopener">Exploratory data analysis</a></li>
+<li><a href="http://www.statmethods.net/stats/correlations.html" target="_blank" rel="noopener">Quick-R: t-test</a></li>
+</ul>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/Data-mining/">#Data mining</a> <a href="/tags/R-Lang/">#R Lang</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+<div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    Personal site. Learn more beyond what you can imagine. | 朝闻道，夕可死矣
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/03/05/openkgc-kickoff/">知识计算项目介绍</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/02/06/HTAP混合事务-分析处理/">HTAP混合事务-分析处理</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/01/01/2020-01-一致性协议/">一致性协议原理总结</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2019/12/09/2019-12-Rust101/">Rust101笔记-深入浅出Rust</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Cheatsheet/">Cheatsheet</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/诗歌随笔/">诗歌随笔</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/KnowledgeComputing/">KnowledgeComputing</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/我思故我在/">我思故我在</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/caesar0301s">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="http://www.twitter.com/xiamingc">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:chenxm35@gmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Dr. Xiaming Chen
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'xiamingdotme';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

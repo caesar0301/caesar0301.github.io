@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Xiaming">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="元数据的可计算化反（中）">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="InnoTrek">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary">
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>元数据的可计算化反（中） - InnoTrek</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://github.com/caesar0301">
+                    Projects
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://scholar.google.com/citations?user=9GzdwPEAAAAJ">
+                    Publications
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/posts/2018/01/11/metadata-part2/">
+                元数据的可计算化反（中）
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-01-11</span>
+            
+            
+                <a href="#disqus_thread" class="comments">Comments</a>
+            
+            
+                <span class="category">
+                    <a href="/categories/我思故我在/">我思故我在</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>题解：这个《元数据》系列本计划介绍一种有关数据的科技讯息，上篇完成后有读者反馈并非人人都懂技术，首当其冲便是这个看不懂的反人类题目。正巧元旦节期出游了趟鲁迅先生故居，从繁糜商业气息中依稀有些关于那个过往时代的见闻。细思之下，我所目标分享的，其实不是数据也不是科技本身，而是这个和数据科技息息相关的时代。而这些狄更斯多年前已经总结完了，无妨对于当下这个时代，填些骨肉，说道说道我眼中这个“失控”的数据时代。</p>
+<p>在上一篇中我们提到了人类百万年进化出的一项功能“记忆惰性”：对纷繁复杂的外界信息经过深加工，以类似偷懒的方式，形成记忆知识并储存在大脑神经元中。因此随着年龄的增长，记忆神经元退化，甚至部分脑细胞老化导致相关知识也随之消失，也就是医学上的“阿尔兹海默症”。</p>
+<a id="more"></a>
+<p>人类在进化过程中，不断寻找新的工具弥补自身的短板。从蒸汽革命到电气革命到计算机革命，从体力解放到脑力解放，一次次的技术更新在不断刷新人类的工具包，也不断刷新着追求更大的解放的野心。</p>
+<p>在最近一次的计算机革命中（开始于20世纪五六十年代），人们努力寻找各种工具克服自身的“记忆惰性”：不想耗费能量处理复杂的计算，电子计算机由此诞生（电影《模仿游戏》）；服务器代替了图书馆，互联网网页的扩张速度远远超过了书本的页数增长；社交网络帮你记录了所有的朋友关系和动态，大脑所需的记忆便是一个网址以及账号；机器学习算法和AI智能技术的最新进展，让人们再次萌生冲动毅然准备放弃这个上帝亲自创造的智慧灵魂。</p>
+<p>正是由于人类的“记忆惰性”这一生物制约，促进了20世纪中后期以来在计算机技术上的不断推陈出新，不断追求极致。这是最好的时代。</p>
+<p>诚然，一边是进化了百万年以上的躯体，一边是从诞生到繁荣不过六七十年的技术，二者所包含的信息匹敌远远不在一个量级。我们还有很长的路要走。人们诸多的憧憬和YY。这也是最坏的时代，一个有些失控的时代。</p>
+<p>失控不仅在主观，也在客观。计算信息技术在初期表现出很强的经济效应，这种繁荣挤压了以往的经济领域，更多的资源将目光投向“新欢”，而冷落了“旧爱”。</p>
+<p>这一繁荣正面上得益于两个信息不对称：一个早期高科技的局部繁荣与全球落后之间的不对称，这个不对称造就了少数几个早期信息强国；另一个是高科技扩散在时间上的不对称，这个不对称造就了一些较早接触到这一先机的富裕群体（体现在个人层面便是互联网业鼓吹的一夜暴富）。</p>
+<p>在整个发展尺度上看的时候，我们依然处在计算机革命的余波之中，只是波的能量在不断降低，变得有些“波澜不惊”。因为随着信息的传播时间越长、范围越广，上述两个不对称性消失得越快。结合当下，“互联网+”的声嘶力竭的呐喊，仅仅是这一波澜上的一次小小的回音，毕竟，这只是一次努力寻找当前世界中信息不对称的缝隙，而不是发现一个处女的旷地或峡谷。</p>
+<p>而之前高不对称的信息时代积累的经济红利，就像一头被困的发情公牛，也对这个所谓的“余波”阶段做了最好的注脚。在商业发展初期，尤其是农业为支撑经济的时代，商业的短期繁荣往往预示着农业的衰弱（吴晓波《浩荡两千年》）。类似地，在出现新的信息不对称机遇之前，以往的资本积累开始玩“金钱游戏”，涌入各种投机市场，此时人的欲望在金钱游戏中被利用（想想现在的金融和投资市场）。这种投机短期来讲对于实体经济有些甜头，但是长期来讲可是会伤筋动骨的。</p>
+<p>失控也蕴含着机遇。在计算机革命初期较大的信息化行动之后，人类不仅积累的财富，同时造就了一台覆盖全球的数字机器。这一机器以互联网为载体，连接着数以百亿记的各类数字化信息化设备，7x24小时马力全开地产生着源源不断比特数据。</p>
+<p>这一机器在不断自我完善，在便捷我们人类生活的同时，也在不断挑战我们人类自身。好吧，不要嫌我烦，这里又要提我们自身的生物约束，“记忆惰性”。</p>
+<p>我们本以为这台机器会帮我们很好的保留信息，可惜的是，一个网页的平均寿命数量级在1000天左右（10.1109/JCDL.2014.6970226）。“记忆惰性”本能地促使人们开始认真思考，如何更好地将我们所在时代的信息有效的留存下来？换句话说，如何从这些海量的数据中萃取出有价值的信息，并借助机器或人类本身，将其存储为知识。</p>
+<p>这一内在的冲动，也正是我眼中的这些年技术发展的内在驱动。这种冲动如此强烈，甚至有些焦虑的迹象，以至于可以在短期内，被一个“人狗大战”（记得阿法狗AlphaGo？）的报道搞得热血沸腾，媒体也拿出了可以媲美当年人类登月前后的脑洞和激情。《星球大战》和《星际迷航》系列便诞生在那个时候，很多国内外创业者都表示喜欢这两部作品，或许因为大家都处在相似的年代吧！</p>
+<p>这一内在的冲动也并非纯粹的热血。21世纪初几乎火遍全球的“大数据”（也许除了南北极和少有的几个原始部落），便是人们拿出的针对这一焦虑的初期方案。这个方案所起到的实际效果，在笔者看来，布道的成效远大于实际效益本身。</p>
+<p>从布道的角度，人们开始认真思考计算机革命的初期不对称性即将消失的时候，如何面对数字机器7x24小时的生产力和人类自身“记忆惰性”之间的矛盾。这一矛盾实际上在积累新的不对称性，新的不对称性同时需要新的能力去解决（当然不仅仅是科技，包括经济、政治、甚至人类认知本身的提升）。这种新的不对称性我们在会详述。</p>
+<p>集体的共识往往是在集体的焦虑中达成的。</p>
+<p>这几年的云计算、大数据、人工智能技术热，无非在帮助人们从计算、数据、算法维度探索一条走出当前焦虑的道路。这些技术本身并不是我想讨论的重点，否则容易为一木而舍一林（虽然平时80%的时间都在做这些事情）。</p>
+<p>这条道路本身建立在新的不对称性之上。不过在笔者看来，这些在新的不对称性积累的初期阶段，新的科技都是相辅相成的，在未来的某个时间、空间点上，大家将会汇聚一起（当然发展过程中也在不断融合），产生更多的突破和能量，从另一个层次上破解新的不对称性难题。</p>
+<p>因此可以说，我们处在一个失控、但又可能是最好的时代。这时候请我们再默念下略有修改的狄更斯先生的箴言，会有更多感触：</p>
+<p>这是一个最坏的时代，这是一个最好的时代；</p>
+<p>这是一个愚蠢的年代，这是一个智慧的年代</p>
+<p>……</p>
+<p>（未完待续，版权归作者所有，引用请注明出处）</p>
+<p>下篇摘要：</p>
+<p>在数字化世界里，信息被“拍平”，转换成文字图像，以“超高清”方式记录在网络媒介上。这种“超高清”方式喻指，一个故事的梗概和细节同时被记录，且表示为无差别的表达形式（如文字或像素）。例如，一篇数字化了的文章记录的故事，梗概部分不会随着时间流逝而凸显，细节的部分也不会随着时间流逝而消失。如何借助于人类的“记忆惰性”，实现从数据–&gt;信息–&gt;知识的蜕变的同时，降低人类个体获取信息的成本。这一趋势开始于21世纪初，新技术的蓬勃带来了“信息孤岛”效应，以及数据壁垒，进而造成新的信息不对称….</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/Metadata/">#Metadata</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+<div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    Personal site. Learn more beyond what you can imagine. | 朝闻道，夕可死矣
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/03/05/openkgc-kickoff/">知识计算项目介绍</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/02/06/HTAP混合事务-分析处理/">HTAP混合事务-分析处理</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/01/01/2020-01-一致性协议/">一致性协议原理总结</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2019/12/09/2019-12-Rust101/">Rust101笔记-深入浅出Rust</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Cheatsheet/">Cheatsheet</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/诗歌随笔/">诗歌随笔</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/KnowledgeComputing/">KnowledgeComputing</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/我思故我在/">我思故我在</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/caesar0301s">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="http://www.twitter.com/xiamingc">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:chenxm35@gmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Dr. Xiaming Chen
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'xiamingdotme';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

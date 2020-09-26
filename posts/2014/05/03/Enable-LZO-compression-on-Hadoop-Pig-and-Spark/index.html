@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Xiaming">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Enable LZO Compression on Hadoop, Pig and Spark">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="InnoTrek">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary">
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>Enable LZO Compression on Hadoop, Pig and Spark - InnoTrek</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://github.com/caesar0301">
+                    Projects
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://scholar.google.com/citations?user=9GzdwPEAAAAJ">
+                    Publications
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/posts/2014/05/03/Enable-LZO-compression-on-Hadoop-Pig-and-Spark/">
+                Enable LZO Compression on Hadoop, Pig and Spark
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-05-03</span>
+            
+            
+                <a href="#disqus_thread" class="comments">Comments</a>
+            
+            
+                <span class="category">
+                    <a href="/categories/Tutorials/">Tutorials</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>In this tutorial, I will show you how to enable LZO compression on Hadoop, Pig and Spark. I suppose that you have set up a basic hadoop installation successfully (if not, please refer to other tutorials for <a href="http://hadoop.apache.org/docs/stable/" target="_blank" rel="noopener">Hadoop installation</a>).</p>
+<a id="more"></a>
+<p>You reach this page possibly because you encounter the same problem as I encountered, usually starting with Java exception:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.ClassNotFoundException: Class com.hadoop.compression.lzo.LzoCodec not found.</span><br></pre></td></tr></table></figure>
+<p>As the <a href="http://hadoop.apache.org/" target="_blank" rel="noopener">Apache</a> and <a href="http://www.cloudera.com" target="_blank" rel="noopener">Cloudera</a> distributions are two of the most popular distributions, configurations for both contexts are shown. Briefly, three main steps would be walked through towards the final point.</p>
+<h2 id="Step1-Installing-native-lzo-libraries"><a href="#Step1-Installing-native-lzo-libraries" class="headerlink" title="Step1: Installing native-lzo libraries"></a>Step1: Installing <code>native-lzo</code> libraries</h2><p>The <a href="http://www.oberhumer.com/opensource/lzo/" target="_blank" rel="noopener">native-lzo library</a>) is required for the installation of <code>hadoop-lzo</code>. You can install them manually or by facilitating the Package Manager (<strong>NOTE:</strong> Make sure all nodes in the cluster have <code>native-lzo</code> installed.):</p>
+<ul>
+<li>On Mac OS:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo port install lzop lzo2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>On RH or CentOS:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install lzo liblzo-devel</span><br></pre></td></tr></table></figure>
+<ul>
+<li>On Debian or ubuntu:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install liblzo2-dev</span><br></pre></td></tr></table></figure>
+<h2 id="Step2-Installing-hadoop-lzo-library"><a href="#Step2-Installing-hadoop-lzo-library" class="headerlink" title="Step2: Installing hadoop-lzo library"></a>Step2: Installing <code>hadoop-lzo</code> library</h2><h3 id="For-Apache-Hadoop"><a href="#For-Apache-Hadoop" class="headerlink" title="For Apache Hadoop"></a>For Apache Hadoop</h3><p>As the LZO is GPL’ed, it not shipped with official Hadoop distribution which takes Apache Software License. I recommend the <a href="https://github.com/twitter/hadoop-lzo" target="_blank" rel="noopener">Twitter version</a> which is a forked version of <a href="https://code.google.com/a/apache-extras.org/p/hadoop-gpl-compression" target="_blank" rel="noopener">hadoop-gpl-compression</a> with remarkable improvements. If you are running the official Hadoop, installation is guieded in <a href="https://github.com/twitter/hadoop-lzo/blob/master/README.md" target="_blank" rel="noopener">the documentation</a>.</p>
+<h3 id="For-Cloudera-Distribution"><a href="#For-Cloudera-Distribution" class="headerlink" title="For Cloudera Distribution"></a>For Cloudera Distribution</h3><p>In Cloudera’s CDH, <code>hadoop-lzo</code> is shipped to customers as parcels and you can download and distribute it conviniently using the Cloudera Manager. By default, the <code>hadoop-lzo</code> will be installed in <code>/opt/cloudera/parcels/HADOOP_LZO</code>. Here we show the configuration on our cluster (Cloudera CDH 5 HADOOP_LZO version 0.4.15).</p>
+<h2 id="Step3-Setting-up-env-variables"><a href="#Step3-Setting-up-env-variables" class="headerlink" title="Step3: Setting up env variables"></a>Step3: Setting up env variables</h2><h3 id="For-Apache-Hadoop-Pig"><a href="#For-Apache-Hadoop-Pig" class="headerlink" title="For Apache Hadoop/Pig"></a>For Apache Hadoop/Pig</h3><p>The basic configuration is for Apache Hadoop, while Pig is piggying upon its functionality. First, set compression codecs libraries in <code>core-site.xml</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">name</span>&gt;</span>io.compression.codecs<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">value</span>&gt;</span>org.apache.hadoop.io.compress.GzipCodec,</span><br><span class="line">           org.apache.hadoop.io.compress.DefaultCodec,</span><br><span class="line">           org.apache.hadoop.io.compress.BZip2Codec,</span><br><span class="line">           com.hadoop.compression.lzo.LzoCodec,</span><br><span class="line">           com.hadoop.compression.lzo.LzopCodec</span><br><span class="line">    <span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">name</span>&gt;</span>io.compression.codec.lzo.class<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">value</span>&gt;</span>com.hadoop.compression.lzo.LzoCodec<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Then set MapReduce compression configuration in <code>mapred-site.xml</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapred.compress.map.output<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapred.map.output.compression.codec<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>com.hadoop.compression.lzo.LzoCodec<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapred.child.env<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>JAVA_LIBRARY_PATH=$JAVA_LIBRARY_PATH:/path/to/your/hadoop-lzo/libs/native<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Eventually, append <code>HADOOP_CLASSPATH</code> to <code>hadoop-env.sh</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HADOOP_CLASSPATH=<span class="variable">$HADOOP_CLASSPATH</span>:/opt/cloudera/parcels/CDH/lib/hadoop/lib/*</span><br></pre></td></tr></table></figure>
+<h3 id="For-Cloudera-Distribution-1"><a href="#For-Cloudera-Distribution-1" class="headerlink" title="For Cloudera Distribution"></a>For Cloudera Distribution</h3><p>You can use the Cloudera Manager to enable the same previous settings via GUI interface. For MapReduce, change the corresponding values as above in the configuration tab.</p>
+<p>At last, restart dependent services in right order and deploy the configurations among all nodes. That’s it!!. Then you can test the functionality with command and get successful messages similar to below:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ hadoop jar /path/to/hadoop-lzo.jar com.hadoop.compression.lzo.LzoIndexer lzo_logs</span><br><span class="line">$ 14/05/04 01:13:13 INFO lzo.GPLNativeCodeLoader: Loaded native gpl library</span><br><span class="line">$ 14/05/04 01:13:13 INFO lzo.LzoCodec: Successfully loaded &amp; initialized native-lzo library [hadoop-lzo rev 49753b4b5a029410c3bd91278c360c2241328387]</span><br><span class="line">$ 14/05/04 01:13:14 INFO lzo.LzoIndexer: [INDEX] LZO Indexing file datasets/lzo_logs size 0.00 GB...</span><br><span class="line">$ 14/05/04 01:13:14 INFO Configuration.deprecation: hadoop.native.lib is deprecated. Instead, use io.native.lib.available</span><br><span class="line">$ 14/05/04 01:13:14 INFO lzo.LzoIndexer: Completed LZO Indexing <span class="keyword">in</span> 0.39 seconds (0.02 MB/s).  Index size is 0.01 KB.</span><br></pre></td></tr></table></figure>
+<h3 id="For-Spark"><a href="#For-Spark" class="headerlink" title="For Spark"></a>For Spark</h3><p>This consumes me much time because there are less information in previous posts. But the solution is strightforward with previous experience. No matter the Spark is installed via tar or the Cloudera Manager, you need merely to append two path values to <code>spark-env.sh</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SPARK_LIBRARY_PATH=<span class="variable">$SPARK_LIBRARY_PATH</span>:/path/to/your/hadoop-lzo/libs/native</span><br><span class="line">SPARK_CLASSPATH=<span class="variable">$SPARK_CLASSPATH</span>:/path/to/your/hadoop-lzo/java/libs</span><br></pre></td></tr></table></figure>
+<h2 id="Ralted-posts-and-questions"><a href="#Ralted-posts-and-questions" class="headerlink" title="Ralted posts and questions"></a>Ralted posts and questions</h2><p>A comparison of LZO performance is given in <a href="http://blog.cloudera.com/blog/2009/11/hadoop-at-twitter-part-1-splittable-lzo-compression/" target="_blank" rel="noopener">another place</a>. A related question is also asked on <a href="http://stackoverflow.com/q/23441142/1320284" target="_blank" rel="noopener">StackOverflow</a> but there are no solutions about this up to the finish of this tutorial. You maybe also interested in how to <a href="http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM4Ent/latest/Cloudera-Manager-Installation-Guide/cmig_install_LZO_Compression.html" target="_blank" rel="noopener">use the LZO Parcel from Cloudera</a>.</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/Hadoop/">#Hadoop</a> <a href="/tags/Pig/">#Pig</a> <a href="/tags/Spark/">#Spark</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+<div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    Personal site. Learn more beyond what you can imagine. | 朝闻道，夕可死矣
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/03/05/openkgc-kickoff/">知识计算项目介绍</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/02/06/HTAP混合事务-分析处理/">HTAP混合事务-分析处理</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/01/01/2020-01-一致性协议/">一致性协议原理总结</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2019/12/09/2019-12-Rust101/">Rust101笔记-深入浅出Rust</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Cheatsheet/">Cheatsheet</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/诗歌随笔/">诗歌随笔</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/KnowledgeComputing/">KnowledgeComputing</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/我思故我在/">我思故我在</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/caesar0301s">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="http://www.twitter.com/xiamingc">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:chenxm35@gmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Dr. Xiaming Chen
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'xiamingdotme';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

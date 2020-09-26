@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Xiaming">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="HTAP混合事务-分析处理">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="InnoTrek">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary">
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>HTAP混合事务-分析处理 - InnoTrek</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://github.com/caesar0301">
+                    Projects
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://scholar.google.com/citations?user=9GzdwPEAAAAJ">
+                    Publications
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/posts/2020/02/06/HTAP混合事务-分析处理/">
+                HTAP混合事务-分析处理
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-02-06</span>
+            
+            
+                <a href="#disqus_thread" class="comments">Comments</a>
+            
+            
+                <span class="category">
+                    <a href="/categories/读书笔记/">读书笔记</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="OLAP-vs-OLTP"><a href="#OLAP-vs-OLTP" class="headerlink" title="OLAP vs. OLTP"></a>OLAP vs. OLTP</h2><ul>
+<li><p>OLTP: 面向应用\最新\细节\简单事务\上千用户\MB-GB\ER模型\行式存储</p>
+</li>
+<li><p>OLAP: 面向主题\历史\聚合\历史查询\百万用户\GB-TB\星型模型\列式存储</p>
+</li>
+</ul>
+<p>目前方案折中：OLTP + Snapshot -&gt; OLAP，例如</p>
+<ul>
+<li>Linux系统快照，快照不能太过落后于OLTP</li>
+<li>HANA的增量合并热数据</li>
+</ul>
+<p>市场产品：</p>
+<ul>
+<li>腾讯云TiDB</li>
+<li>阿里HybridDB for MySQL</li>
+<li>百度BaikaDB</li>
+<li>MemQL</li>
+</ul>
+<a id="more"></a>
+<h2 id="阿里HybridDB-for-MySQL"><a href="#阿里HybridDB-for-MySQL" class="headerlink" title="阿里HybridDB for MySQL"></a>阿里HybridDB for MySQL</h2><ol>
+<li>2013: 单机中间件</li>
+</ol>
+<ul>
+<li>CPU、内存、锁、日志、事务等竞争</li>
+</ul>
+<ol start="2">
+<li>2014：分库分表（类MPP）</li>
+</ol>
+<ul>
+<li>事务状态机：两阶段提交保证强一致性</li>
+<li>请求连接池：分级，服务器端共享</li>
+<li>流式执行：简化支持特定算子</li>
+</ul>
+<ol start="3">
+<li>2015：存储优化</li>
+</ol>
+<ul>
+<li>FLASHCACHE -&gt; BCACHE(SSD &amp; SATA)</li>
+<li>SQL优化：InnoDB -&gt; TokuDB，根插入，异步合并到叶子结点</li>
+<li>BinLog流式传输</li>
+</ul>
+<ol start="4">
+<li>2016：优化计算支持OLAP</li>
+</ol>
+<ul>
+<li>SQL兼容性：执行计划优化（RBO，CBO）</li>
+<li>计算引擎：OLAP用Flink，OLTP用MPP</li>
+<li>数据一致性：MySQL暴露读视图，保障OLAP看到最新数据</li>
+<li>SLA：Query级别做IOPS隔离，是AP和TP单独保障</li>
+</ul>
+<ol start="5">
+<li>2017：行列存储优化</li>
+</ol>
+<ul>
+<li>列存储索引，如位图索引，但AP视图有延迟</li>
+</ul>
+<ol start="6">
+<li>2018：共享存储PolarDB，而PolarDB借鉴Amazon Aurora</li>
+</ol>
+<ul>
+<li>存储和计算分离架构</li>
+<li>BinLog -&gt; Readlog</li>
+</ul>
+<h2 id="BitMap-Index-vs-B-Tree-Index"><a href="#BitMap-Index-vs-B-Tree-Index" class="headerlink" title="BitMap Index vs. B-Tree Index"></a>BitMap Index vs. B-Tree Index</h2><h3 id="位图索引：每列的散列值各对应一个Bit"><a href="#位图索引：每列的散列值各对应一个Bit" class="headerlink" title="位图索引：每列的散列值各对应一个Bit"></a>位图索引：每列的散列值各对应一个Bit</h3><p>优势：</p>
+<ul>
+<li>硬件加速，按位操作</li>
+<li>多列聚合 -&gt; 按位逻辑</li>
+</ul>
+<p>劣势：</p>
+<ul>
+<li>高基数列索引占用空间大，查询性能差</li>
+<li>更新代价大，如果更新散列值，要获取写锁，更新很多索引</li>
+<li>适用只读，更新少，或追加数据上</li>
+</ul>
+<p>场景：</p>
+<ul>
+<li>数仓、决策系统、OLAP、图数据库</li>
+</ul>
+<h3 id="B-Tree索引：N叉平衡树，每列散列值对应一个RowID"><a href="#B-Tree索引：N叉平衡树，每列散列值对应一个RowID" class="headerlink" title="B-Tree索引：N叉平衡树，每列散列值对应一个RowID"></a>B-Tree索引：N叉平衡树，每列散列值对应一个RowID</h3><p>优势：</p>
+<ul>
+<li>更新效率高</li>
+</ul>
+<p>劣势：</p>
+<ul>
+<li>低基数时索引空间冗余</li>
+<li>树结构会随记录增多膨胀</li>
+<li>单一索引路径选择问题</li>
+</ul>
+<p>场景：</p>
+<ul>
+<li>事务型OLTP</li>
+</ul>
+<h2 id="PolarDB-vs-Aurora-vs-Taurus"><a href="#PolarDB-vs-Aurora-vs-Taurus" class="headerlink" title="PolarDB vs. Aurora vs. Taurus"></a>PolarDB vs. Aurora vs. Taurus</h2><p>TODO</p>
+
+    </div>
+
+    
+
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    Personal site. Learn more beyond what you can imagine. | 朝闻道，夕可死矣
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/03/05/openkgc-kickoff/">知识计算项目介绍</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/02/06/HTAP混合事务-分析处理/">HTAP混合事务-分析处理</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/01/01/2020-01-一致性协议/">一致性协议原理总结</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2019/12/09/2019-12-Rust101/">Rust101笔记-深入浅出Rust</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Cheatsheet/">Cheatsheet</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/诗歌随笔/">诗歌随笔</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/KnowledgeComputing/">KnowledgeComputing</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/我思故我在/">我思故我在</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/caesar0301s">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="http://www.twitter.com/xiamingc">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:chenxm35@gmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Dr. Xiaming Chen
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'xiamingdotme';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Xiaming">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="图数据库简笔">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="InnoTrek">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary">
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>图数据库简笔 - InnoTrek</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://github.com/caesar0301">
+                    Projects
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://scholar.google.com/citations?user=9GzdwPEAAAAJ">
+                    Publications
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/posts/2018/03/04/图数据库简笔/">
+                图数据库简笔
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-03-04</span>
+            
+            
+                <a href="#disqus_thread" class="comments">Comments</a>
+            
+            
+                <span class="category">
+                    <a href="/categories/读书笔记/">读书笔记</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>图领域分类：联机事务图的持久化，类似于OLTP；离线图分析技术，类似于OLAP</li>
+<li>主流图模型：属性图、资源描述框架RDF三元组、超图</li>
+<li>图数据库两个重要特性：底层存储、处理引擎<ul>
+<li>原生图存储 vs 序列化图存储</li>
+<li>原生图处理（免索引邻接，即元素直接与邻居相连）</li>
+<li>图数据库中实体之间的关联是“一等公民”</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/Graphdb_domain.png" alt="Graphdb Magic"></p>
+<a id="more"></a>
+<h2 id="关联数据的挑战（SQL-and-NoSQL）"><a href="#关联数据的挑战（SQL-and-NoSQL）" class="headerlink" title="关联数据的挑战（SQL and NoSQL）"></a>关联数据的挑战（SQL and NoSQL）</h2><ul>
+<li>SQL数据库<ul>
+<li>数据关系表达成本高、且不易维护</li>
+<li>反向查询、递归反向查询代价更大，如Bob的朋友的朋友们</li>
+</ul>
+</li>
+<li>NoSQL，如键值、文档、列存储<ul>
+<li>添加数据关联，一般采用聚合存储模型，即增加外键</li>
+</ul>
+</li>
+<li>一句话，SQL和NoSQL在关联数据处理中成本高，主要原因是实体之间的关联不是作为“一等公民”存在的，而是隐含的，无论是关系型数据库中的索引，还是聚合存储模型中的外键</li>
+</ul>
+<h2 id="利用图的数据建模"><a href="#利用图的数据建模" class="headerlink" title="利用图的数据建模"></a>利用图的数据建模</h2><ul>
+<li>关联原生的建模方式</li>
+<li>常见的图查询语言，Cypher/SPARKQL/Gremlin/Graql</li>
+</ul>
+<h2 id="图数据库的内部设计"><a href="#图数据库的内部设计" class="headerlink" title="图数据库的内部设计"></a>图数据库的内部设计</h2><ul>
+<li>原生图处理（免索引邻接）比重索引图效率高，考虑下，索引的算法复杂度可能是O(log(n))，而查找直接邻接的复杂度为O(1)；遍历一个m步的网络，索引算法复杂度为O(mlog(n))，免索引邻接为O(m)</li>
+<li>原生图存储，以neo4j为例</li>
+<li>Cache replacement policies</li>
+</ul>
+<h2 id="图论预分析"><a href="#图论预分析" class="headerlink" title="图论预分析"></a>图论预分析</h2><ul>
+<li>图论和图算法是计算机科学已经成熟和易于理解的领域</li>
+<li>深度优先搜索有利于解决，试图顺着一条路径来发现离散的信息</li>
+<li>广度优先搜搜有利于解决，寻径算法或对整个关系图系统地搜寻<ul>
+<li>Dijkstra</li>
+<li>A-Star</li>
+</ul>
+</li>
+<li>强联系、弱联系、三元闭包、局部桥</li>
+</ul>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/KnowledgeComputing/">#KnowledgeComputing</a> <a href="/tags/GraphDatabase/">#GraphDatabase</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+<div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    Personal site. Learn more beyond what you can imagine. | 朝闻道，夕可死矣
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/03/05/openkgc-kickoff/">知识计算项目介绍</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/02/06/HTAP混合事务-分析处理/">HTAP混合事务-分析处理</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/01/01/2020-01-一致性协议/">一致性协议原理总结</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2019/12/09/2019-12-Rust101/">Rust101笔记-深入浅出Rust</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Cheatsheet/">Cheatsheet</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/诗歌随笔/">诗歌随笔</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/KnowledgeComputing/">KnowledgeComputing</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/我思故我在/">我思故我在</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/caesar0301s">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="http://www.twitter.com/xiamingc">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:chenxm35@gmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Dr. Xiaming Chen
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'xiamingdotme';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

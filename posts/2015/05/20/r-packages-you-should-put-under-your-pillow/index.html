@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Xiaming">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="R Packages You Should Put Under Your Pillow">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="InnoTrek">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary">
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>R Packages You Should Put Under Your Pillow - InnoTrek</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://github.com/caesar0301">
+                    Projects
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://scholar.google.com/citations?user=9GzdwPEAAAAJ">
+                    Publications
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/posts/2015/05/20/r-packages-you-should-put-under-your-pillow/">
+                R Packages You Should Put Under Your Pillow
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2015-05-20</span>
+            
+            
+                <a href="#disqus_thread" class="comments">Comments</a>
+            
+            
+                <span class="category">
+                    <a href="/categories/Tutorials/">Tutorials</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>R在统计分析、机器学习、以及绘图上有着丰富的功能，基础安装包里的函数能够满足基本的需求，如果需要更多样化、复杂的数据处理，可以试着使用以下工具:</p>
+<a id="more"></a>
+<h2 id="数据清洗转换-Data-wangling"><a href="#数据清洗转换-Data-wangling" class="headerlink" title="数据清洗转换 (Data wangling)"></a>数据清洗转换 (Data wangling)</h2><ul>
+<li>DescTools (Tools for describing data and descriptive statistics)</li>
+<li>dplyr (面向data.frame，plyr的下次迭代，让R具有流式数据处理的风格）</li>
+<li>plyr (有用的ddply函数，参考<a href="http://www.r-bloggers.com/a-fast-intro-to-plyr-for-r/）" target="_blank" rel="noopener">http://www.r-bloggers.com/a-fast-intro-to-plyr-for-r/）</a></li>
+<li>reshape (数据变形的基本操作，丰富但底层)</li>
+<li>reshape2 (功能强大的melt和cast数据融合函数，reshape简版)</li>
+<li>tidyr (功能简单实用的长宽数据变化，reshape2简版)</li>
+</ul>
+<h2 id="绘图及颜色-Colors-and-plots"><a href="#绘图及颜色-Colors-and-plots" class="headerlink" title="绘图及颜色 (Colors and plots)"></a>绘图及颜色 (Colors and plots)</h2><ul>
+<li>colorRamps (多种颜色梯度生成，如matlab风格的颜色)</li>
+<li>Colors in ggplot2 (<a href="http://bit.do/SDnT" target="_blank" rel="noopener">http://bit.do/SDnT</a>)</li>
+<li>colorspace (Carries out mapping between assorted color spaces including RGB, HSV, HLS, CIEXYZ, CIELUV, HCL.)</li>
+<li>dichromat (Focused on palettes for color-impaired viewers. Collapse red-green or green-blue distinctions to simulate the effects of different types of color-blindness.)</li>
+<li>ggplot2 (小清新绘图，事实上比基础绘图函数强大很多)</li>
+<li>ggvis (交互式数据可视化)</li>
+<li>gplots (一些加强版数据可视化函数，如boxplot2)</li>
+<li>grDevices (The base colors in core R, including well-known functions like colors, palette.)</li>
+<li>gridExtra (帮助ggplot2实现窗格布局，类似于基础包里的layout,mfrow函数)</li>
+<li>IDPmisc (Contains different high-level graphics functions for displaying large datasets)</li>
+<li>plotrix (多种不常见但可能有用的图形)</li>
+<li>RColorBrewer (The packages provides palettes for drawing nice maps shaded according to a variable)</li>
+<li>rgl (支持3D图形、视频生成，包括多种格式)</li>
+<li>scatterplot3d (绘制3D的散点图或平面)</li>
+</ul>
+<h2 id="模型和机器学习-Machine-learning"><a href="#模型和机器学习-Machine-learning" class="headerlink" title="模型和机器学习 (Machine learning)"></a>模型和机器学习 (Machine learning)</h2><ul>
+<li>caret (The “go to” package for machine learning, classification and regression training)</li>
+<li>depmixS4 (Hidden Markov Model及其他dependent mixture model实现)</li>
+<li>e1071 (Good svm implementation and other machine learning algorithms)</li>
+<li>entropy (多种计算序列熵的方法)</li>
+<li>partykit (Tools for plotting decision trees)</li>
+<li>pracma (Functions for numerical analysis, linear algebra, optimization, differential equations and some special functions)</li>
+<li>psych (源自心理学研究人员，table和相关分析等)</li>
+<li>survMisc (Relatively new package with various functions for survival data extending the methods available in the survival package.)</li>
+</ul>
+<h2 id="随机分布参数估计-Parameters-estimation"><a href="#随机分布参数估计-Parameters-estimation" class="headerlink" title="随机分布参数估计 (Parameters estimation)"></a>随机分布参数估计 (Parameters estimation)</h2><ul>
+<li>fBasics (包含skewness和kurtosis函数)</li>
+<li>fitdistrplus (对MASS包参数估计函数的加强，同时有灵活的QQ图以及分布对比图)</li>
+<li>fitting{brainwaver}</li>
+<li>Goodness-of-test: goodfit{vcd}, chisq.test, ks.test, qqnorm</li>
+<li>MASS (最大似然估计fitdistr函数)</li>
+<li>mixdist (混合模型的参数估计)</li>
+<li>mixtools (混合模型的参数估计，CRAN Cluster View更多关于mixture model 的信息)</li>
+<li>Normality test: shapiro.test, jarque.bera.test{tseries}, sf.test{nortest}, ad.test{nortest}, cvm.test{nortest}, lillie.test{nortest}, pearson.test{nortest}</li>
+<li>poweRlaw (重尾分布参数估计)</li>
+<li>参数估计函数：optim{stats}, mle{stats4}, fitdistr{MASS}</li>
+</ul>
+<h2 id="Misc工具箱-Misc-tookit"><a href="#Misc工具箱-Misc-tookit" class="headerlink" title="Misc工具箱 (Misc tookit)"></a>Misc工具箱 (Misc tookit)</h2><ul>
+<li>classInt (包含离散化函数，如绘图中颜色的分阶)</li>
+<li>devtools (R包开发工具箱)</li>
+<li>Hmisc (functions for data analysis, graphics, utilities and much more)</li>
+<li>magicaxis (magplot, magaxis, maglab etc.)</li>
+<li>MASS (各种工具函数)</li>
+<li>misc3d (Misc 3d plots including isosurfaces)</li>
+<li>miscet (Miscellaneous R tools to simplify the working with data types and formats including functions for working with data frames and character strings)</li>
+<li>miscFuncs (Some functions for Kalman filters)</li>
+<li>pryr (深入理解R以及R包开发中的有用工具)</li>
+<li>scales (Scales map data to aesthetics.)</li>
+<li>sfsmisc (eaxis的对数坐标轴可实现类似magicaxis的效果)</li>
+<li>squash (Color-based visualization of multivariate data. Map numeric values to colors)</li>
+<li>stringr (Convenience wrappers for functions for manipulating strings)</li>
+</ul>
+<h2 id="优化工具-Speedup"><a href="#优化工具-Speedup" class="headerlink" title="优化工具 (Speedup)"></a>优化工具 (Speedup)</h2><ul>
+<li>parallel (提供mclapply对lapply()和mapply()实现并行化处理。)</li>
+<li>doParallel (The “parallel backend” for <code>foreach</code> package. Must be enabled to use <code>%dopar%</code>.)</li>
+<li>foreach (Using foreach without side effects also facilitates executing the loop in parallel.)</li>
+<li>iterators (Support for iterators, which allow a programmer to traverse through all the elements of a vector, list, or other collection of data.)</li>
+</ul>
+<h2 id="地图工具-Map-tools"><a href="#地图工具-Map-tools" class="headerlink" title="地图工具 (Map tools)"></a>地图工具 (Map tools)</h2><ul>
+<li>deldir (Calculates the Delaunay triangulation and the Dirichlet or Voronoi tessellation (with respect to the entire plane) of a planar point set.)</li>
+<li>geosphere (functions to calculate great circle distance.)</li>
+<li>GISTools (Some mapping and spatial data manipulation tools)</li>
+<li>mapmisc (New package with utilities for producing maps)</li>
+<li>mapproj (Mapping between lon/lat coordinates and projected surface.)</li>
+<li>maps (Display of maps. Projection code and larger maps are in separate packages (mapproj and mapdata)).</li>
+<li>maptools (Set of tools for manipulating and reading geographic data)</li>
+<li>NCmisc (A grab bag of utilities including progress bars and function timers)</li>
+<li>OpenStreetMap (Interfaces to OSM.)</li>
+<li>osmar (Interfaces to OSM.)</li>
+<li>splancs (Spatial Point-Pattern Analysis code in Splus.)</li>
+</ul>
+<h2 id="时空数据分析包-Spatiotemporal"><a href="#时空数据分析包-Spatiotemporal" class="headerlink" title="时空数据分析包 (Spatiotemporal)"></a>时空数据分析包 (Spatiotemporal)</h2><ul>
+<li>CompRandFld - Collect a set of procedures for the analysis of Random Fields by Composite Likelihood methods.</li>
+<li>fields (Fields is for curve, surface and function fitting with an emphasis on splines, spatial data and spatial statistics.)</li>
+<li>geoR (Geostatistical analysis including traditional, likelihood-based and Bayesian methods.Geostatistical analysis including traditional, likelihood-based and Bayesian methods.)</li>
+<li>gstat (Variogram modelling; simple, ordinary and universal point or block (co)kriging, sequential Gaussian or indicator (co)simulation; variogram and variogram map plotting utility functions.)</li>
+<li>PBSmapping (Facilitate the compilation and analysis of fishery data, particularly data referenced by spatial coordinates.)</li>
+<li>RandomFields (Simulation of Gaussian and extreme value random fields; conditional simulation; kriging; maximum likelihood estimation.)</li>
+<li>raster (Reading, writing, manipulating, analyzing and modeling of gridded spatial data.)</li>
+<li>rgdal (Provides bindings to GDAL)</li>
+<li>sp (Basic spatial and temporal classes and useful functions like spplot, Trellis plot, spDists, spsample.)</li>
+<li>spacetime (Classes and methods for spatio-temporal data, including space-time regular lattices, sparse lattices, irregular data, and trajectories)</li>
+<li>spdep (Spatial Dependence: Weighting Schemes, Statistics and Models)</li>
+<li>xts (Uniform handling of R’s different time-based data classes by extending zoo)</li>
+<li>zoo (For Regular and Irregular Time Serie)</li>
+</ul>
+<h2 id="空间相关性-Spatial-correlation"><a href="#空间相关性-Spatial-correlation" class="headerlink" title="空间相关性 (Spatial correlation)"></a>空间相关性 (Spatial correlation)</h2><ul>
+<li>ade4 - This package has function gearymoran that calculates Moran’s I and Geary’s c. Does not plot correlograms.</li>
+<li>ape - Moran’s I test (function Moran.I) for spatial and phylogenetic autocorrelation (based on normal approximation, not on randomizations = fast). Does not plot correlograms.</li>
+<li>geosphere - a bunch of spherical trigonometry functions for geographic applications.</li>
+<li>mpmcorrelogram - I include it as a curiosity. It calculates Multivariate Mantel Correlograms.</li>
+<li>ncf - Provides functions correlog and spline.correlog. Plots correlograms. Does randomization tests.</li>
+<li>pgirmess - Has function correlog that calculates the correlogram. It uses normal approximation to test significance.</li>
+<li>raster - Simple function Moran. Works on rasters. You need to specify a simple neighborhood matrix. Does not plot correlograms.</li>
+<li>spatial - If I understand it correctly, this package first needs you to fit a trend surface (by kriging) and you can then calculate correlogram of this fitted surface. I haven’t gone deeper into it.</li>
+<li><p>spdep - sp.correlogram, moran, moran.plot, moran.test, moran.mc. This is the most comprehensive package, and also the most difficult to work with. Does everything, has steep learning curve.</p>
+</li>
+<li><p>参考: <a href="http://www.r-bloggers.com/spatial-correlograms-in-r-a-mini-overview/" target="_blank" rel="noopener">http://www.r-bloggers.com/spatial-correlograms-in-r-a-mini-overview/</a></p>
+</li>
+</ul>
+<h2 id="其他资源-Public-domains"><a href="#其他资源-Public-domains" class="headerlink" title="其他资源 (Public domains)"></a>其他资源 (Public domains)</h2><ul>
+<li>R-bloggers: <a href="http://www.r-bloggers.com/" target="_blank" rel="noopener">http://www.r-bloggers.com/</a></li>
+<li>Quick R: <a href="http://www.statmethods.net/" target="_blank" rel="noopener">http://www.statmethods.net/</a></li>
+<li>CRAN Task View: <a href="http://cran.r-project.org/web/views/" target="_blank" rel="noopener">http://cran.r-project.org/web/views/</a></li>
+<li>Advanced R: <a href="http://adv-r.had.co.nz/" target="_blank" rel="noopener">http://adv-r.had.co.nz/</a></li>
+<li>Quick list of useful R packages: <a href="http://bit.do/2cB6" target="_blank" rel="noopener">http://bit.do/2cB6</a></li>
+<li>让R成为你的GIS仓库: <a href="http://bit.ly/1twJPvI" target="_blank" rel="noopener">http://bit.ly/1twJPvI</a></li>
+<li>统计中的样本检验基础和R实践: <a href="http://bit.ly/1Dy5uFZ" target="_blank" rel="noopener">http://bit.ly/1Dy5uFZ</a></li>
+<li>多源包搜索引擎: <a href="http://www.rdocumentation.org/" target="_blank" rel="noopener">http://www.rdocumentation.org/</a></li>
+</ul>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/R/">#R</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+<div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    Personal site. Learn more beyond what you can imagine. | 朝闻道，夕可死矣
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/03/05/openkgc-kickoff/">知识计算项目介绍</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/02/06/HTAP混合事务-分析处理/">HTAP混合事务-分析处理</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/01/01/2020-01-一致性协议/">一致性协议原理总结</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2019/12/09/2019-12-Rust101/">Rust101笔记-深入浅出Rust</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Cheatsheet/">Cheatsheet</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/诗歌随笔/">诗歌随笔</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/KnowledgeComputing/">KnowledgeComputing</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/我思故我在/">我思故我在</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/caesar0301s">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="http://www.twitter.com/xiamingc">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:chenxm35@gmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Dr. Xiaming Chen
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'xiamingdotme';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

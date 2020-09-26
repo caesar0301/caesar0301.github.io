@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Xiaming">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Rust101笔记-深入浅出Rust">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Learn more beyond what you can imagine!">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="InnoTrek">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary">
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>Rust101笔记-深入浅出Rust - InnoTrek</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://github.com/caesar0301">
+                    Projects
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="https://scholar.google.com/citations?user=9GzdwPEAAAAJ">
+                    Publications
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/posts/2019/12/09/2019-12-Rust101/">
+                Rust101笔记-深入浅出Rust
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-09</span>
+            
+            
+                <a href="#disqus_thread" class="comments">Comments</a>
+            
+            
+                <span class="category">
+                    <a href="/categories/读书笔记/">读书笔记</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><h3 id="内存段类型"><a href="#内存段类型" class="headerlink" title="内存段类型"></a>内存段类型</h3><ol>
+<li>代码段</li>
+</ol>
+<ul>
+<li>BSS: 未被初始化的全局和静态变量</li>
+<li>数据段: 初始化的全局和静态变量</li>
+<li>函数调用栈: 函数参数, 局部变量等</li>
+<li>堆: 动态分配内存区域</li>
+<li>栈有作用域, 堆没有<ul>
+<li>栈: StackOverflow</li>
+<li>堆: OOM</li>
+<li>段错误: Segmentation Fault</li>
+</ul>
+</li>
+</ul>
+<p>复制语义:<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#[derive(copy.clone)]</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Foo</span></span>()</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="如何实现无性能损失的”内存安全”"><a href="#如何实现无性能损失的”内存安全”" class="headerlink" title="如何实现无性能损失的”内存安全”"></a>如何实现无性能损失的”内存安全”</h3><p>危险来源于两个机制: Aliasing (别名) &amp; Mutation (改变), Rust确保这两个不会同时出现:</p>
+<ul>
+<li><code>&amp;mut</code>型借用也经常被称为”独占指针” (mutable borrow仅可借用一次)</li>
+<li><code>&amp;</code>型借用为”共享借用” (只读指针, 可有多个)</li>
+<li>有Mutable borrow时不可有只读指针</li>
+</ul>
+<p>这和其他语言的指针处理差异较大, 如C语言指针完全自由, 函数式语言尽量使用不可变绑定, 共享上无限制, 一般为无副作用函数+不可变类型.</p>
+<h3 id="Lifetime"><a href="#Lifetime" class="headerlink" title="Lifetime"></a>Lifetime</h3><p>Lexical Lifetime -&gt; Non Lexical Lifetime (NLL)</p>
+<ul>
+<li>所有变量, 借用的生命周期, 丛声明开始到当前语句块结束.<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#![feature(nll)]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>NLL原理</strong></p>
+<p>AST -&gt; MIR (中间层表示)<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustc --emit=mir main.rc</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>NLL只影响静态分析, 不影响执行</li>
+<li>依赖静态检查规则, 无动态规则</li>
+<li>影响”引用类型”的生命周期, 而不是”对象”生命周期</li>
+<li>不影响RAII语义</li>
+</ul>
+<h3 id="内部可变性"><a href="#内部可变性" class="headerlink" title="内部可变性"></a>内部可变性</h3><ol>
+<li>承袭可变性 (Inherited Mutability)<br>a. Struct变量mut, 则内部成员mut<br>b. mut修饰变量而非类型</li>
+<li>内部可变性 (Interior Mutability)<br>a. Mutex, RwLock, Atomic<br>b. Cell, RefCell (单线程)</li>
+<li>Cell隔离多个共享引用(可变和不可变)对内部数据操作的不一致</li>
+<li>RefCell放弃编译阶段的alias+mutation, 而在运行阶段使用. 内部维护了”借用计数器”, 类似”读写锁”机制.</li>
+</ol>
+<p><img src="/images/rust_ref.jpg" alt="RefCell.png"></p>
+<h4 id="解引用"><a href="#解引用" class="headerlink" title="解引用"></a>解引用</h4><p>Rust包含自动解引用机制,如String:Deref<str>,即String可自动解引用为str,则&amp;String可转为&str; 以此类推。<br>编译器会自动解引用再查找调用方法。<br><em>注：解引用后类型为&amp;Target</em></str></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">+----------+-----------+</span><br><span class="line">+    s     +  String   +</span><br><span class="line">+----------+-----------+</span><br><span class="line">+    &amp;s    +  &amp;String  +</span><br><span class="line">+----------+-----------+</span><br><span class="line">+s.deref() +   &amp;str    +</span><br><span class="line">+----------+-----------+</span><br><span class="line">+    *s    +   str     +</span><br><span class="line">+----------+-----------+</span><br><span class="line">+   &amp;*s    +   &amp;str    +</span><br><span class="line">+----------+-----------+</span><br></pre></td></tr></table></figure>
+<h3 id="COW"><a href="#COW" class="headerlink" title="COW"></a>COW</h3><p>Copy-on-write, 在Rust中表示Clone-on-write，一种Lazy处理深度复制的技术。C++同样遵循这一“零性能损失抽象”（Zero-overhead principle）原则。</p>
+<p>内存安全 vs 内存泄漏，后者不是内存安全问题。C++析构函数会泄露。</p>
+<h3 id="Panic"><a href="#Panic" class="headerlink" title="Panic"></a>Panic</h3><p>类似C++，Rust异常处理有四种层次：</p>
+<ul>
+<li>NoThrow：异常内部处理</li>
+<li>Storng Exception Safety：异常状态可回滚，无不一致性</li>
+<li>Basic Exception Satefy：基本异常不会出现泄露</li>
+<li>No Exception Safety：无异常安全保障</li>
+</ul>
+
+    </div>
+
+    
+
+    
+
+    <!-- Comments -->
+    
+    <div class="comments">
+        
+
+
+    </div>
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    Personal site. Learn more beyond what you can imagine. | 朝闻道，夕可死矣
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/03/05/openkgc-kickoff/">知识计算项目介绍</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/02/06/HTAP混合事务-分析处理/">HTAP混合事务-分析处理</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2020/01/01/2020-01-一致性协议/">一致性协议原理总结</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/posts/2019/12/09/2019-12-Rust101/">Rust101笔记-深入浅出Rust</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Cheatsheet/">Cheatsheet</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/诗歌随笔/">诗歌随笔</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/KnowledgeComputing/">KnowledgeComputing</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/我思故我在/">我思故我在</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/caesar0301s">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="http://www.twitter.com/xiamingc">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:chenxm35@gmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Dr. Xiaming Chen
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'xiamingdotme';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
