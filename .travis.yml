@@ -1,3 +1,6 @@
+arch: amd64
+os: linux
+dist: focal
 language: node_js
 node_js:
   - '6'
@@ -10,8 +13,8 @@ before_script:
   - export COMMIT_SHA=`git rev-parse --verify HEAD`
   - git clone https://github.com/klugjo/hexo-theme-alpha-dust themes/alpha-dust
   - cp themes/alpha-dust_config.yml themes/alpha-dust/_config.yml
-  - git config --global user.name 'xiaming.chen'
-  - git config --global user.email 'chenxm35@gmail.com'
+  - git config --global user.name 'travis'
+  - git config --global user.email 'bytravis@example.com'
 install:
   - npm run generate
 script:
