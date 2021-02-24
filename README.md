@@ -10,6 +10,8 @@ We perform manully building due to [error of hexo plugin](https://travis-ci.org/
 git clone https://github.com/klugjo/hexo-theme-alpha-dust themes/alpha-dust
 cp themes/alpha-dust_config.yml themes/alpha-dust/_config.yml
 npm install
+# Generate posts
+npm run generate
 # Deploy to master
 npm run deploy
 ```
